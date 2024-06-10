@@ -151,7 +151,6 @@ data
 data/
 misc/
 *.npy
-*.txt
 *.log
 .wav
 .mp3
