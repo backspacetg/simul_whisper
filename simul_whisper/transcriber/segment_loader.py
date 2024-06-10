@@ -17,7 +17,6 @@ class Segment:
         self.samples_to_read = samples_to_read
         self.samples_in_chunk = samples_in_chunk
         self.buffer_len = samples_in_chunk - samples_to_read
-        print(self.buffer_len)
 
     def __iter__(self):
         frames_in_chunk = self.audio[:self.samples_in_chunk]
