@@ -17,7 +17,7 @@ We used the model checkpoints provided by [openai-whisper](https://github.com/op
 
 ### Install dependencies
 
-We have used Python 3.9.16 and PyTorch 2.0.1, but the codes may be compatible with other close Python and PyTorch versions. Other dependencies are listed in `requirements.txt`. An modified Version of [openai-whisper](https://github.com/openai/whisper) 
+We used Python 3.9.16 and PyTorch 2.0.1, but the codes may be compatible with other close Python and PyTorch versions. Other dependencies are listed in `requirements.txt`.
 
 ## Python Usage
 
