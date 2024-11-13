@@ -1,6 +1,6 @@
 # Simul-Whisper
 
-Code and models for INTERSPEECH 2024 paper *Simul-Whisper: Attention-Guided Streaming Whisper with Truncation Detection*
+Code and models for INTERSPEECH 2024 paper *[Simul-Whisper: Attention-Guided Streaming Whisper with Truncation Detection](https://arxiv.org/pdf/2406.10052)*
 
 ## Setups
 
