@@ -27,7 +27,7 @@ A sample code is provided in `transcribe.py`. This code includes three main step
 
 ```python
     cfg = AlignAttConfig(
-        model_path=model_path, 
+        model_path=model_path, # path to the downloaded whisper model
         segment_length=segment_length, # chunk length, in seconds
         frame_threshold=frame_threshold, # threshold for the attention-guided decoding, in frames
         language=language,
