@@ -20,7 +20,7 @@ class PaddedAlignAttWhisper:
             model_name = cfg.model_path
             model_path = None
         else:
-            model_name = os.path.basename(cfg.model_path).replace(".pt", "")
+            model_name = os.path.basename(os.path.abspath(cfg.model_path)).replace(".pt", "")
             model_path = os.path.dirname(cfg.model_path)
         self.model = load_model(name=model_name, download_root=model_path)
         checkpoint = torch.load(cfg.if_ckpt_path)
