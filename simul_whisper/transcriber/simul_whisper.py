@@ -4,7 +4,7 @@ import logging
 import torch
 import torch.nn.functional as F
 
-from ..whisper import load_model, DecodingOptions, tokenizer
+from ..whisper import load_model, DecodingOptions, tokenizer, _MODELS
 from .config import AlignAttConfig
 from ..whisper.audio import log_mel_spectrogram, TOKENS_PER_SECOND, pad_or_trim, N_SAMPLES, N_FRAMES
 from ..whisper.timing import median_filter
@@ -16,9 +16,12 @@ logger = logging.getLogger(__name__)
 
 class PaddedAlignAttWhisper:
     def __init__(self, cfg: AlignAttConfig) -> None:
-            
-        model_name = os.path.basename(cfg.model_path).replace(".pt", "")
-        model_path = os.path.dirname(cfg.model_path)
+        if cfg.model_path in _MODELS:
+            model_name = cfg.model_path
+            model_path = None
+        else:
+            model_name = os.path.basename(cfg.model_path).replace(".pt", "")
+            model_path = os.path.dirname(cfg.model_path)
         self.model = load_model(name=model_name, download_root=model_path)
         checkpoint = torch.load(cfg.if_ckpt_path)
         self.CIFLinear = torch.nn.Linear(self.model.dims.n_audio_state, 1)
