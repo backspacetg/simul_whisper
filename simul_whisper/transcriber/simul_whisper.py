@@ -178,7 +178,7 @@ class PaddedAlignAttWhisper:
             self.segments.append(segment)
             if len(self.segments) * self.cfg.segment_length < self.cfg.min_seg_len: 
                 logger.debug("waiting for next segment")
-                return self.initial_tokens.new_tensor([]), False
+                return self.initial_tokens.new_tensor([])
             if len(self.segments) * self.cfg.segment_length >= self.cfg.buffer_len:
                 self.segments = self.segments[1:]
                 self.tokens = [self.initial_tokens] + self.tokens[2:]
